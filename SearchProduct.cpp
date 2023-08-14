@@ -54,7 +54,6 @@ public:
         //for input like: "br" products with names like "Brand 1", "brand name" needs to included in the found results.
         vector<Product>  result;
         for (Product p : fHandler.readJsonFile()) {
-            //    for (Product p : fHandler.getProducts()) {        
             if (to_lowercase(p.getBrand()).find(to_lowercase(brand)) != string::npos) {
                 result.push_back(p);
             }
@@ -73,11 +72,11 @@ public:
         }
         else {
             for (Product p : plist) {
-                cout << "Name: "<< p.name << endl;
-                cout << "Brand: "<< p.brand << endl;
-                cout << "Description: "<< p.description << endl;
-                cout << "Category: "<< p.category << endl;
-                cout << "Price: $"<< p.price << endl;
+                cout << "Name: "<< p.getName() << endl;
+                cout << "Brand: "<< p.getBrand() << endl;
+                cout << "Description: "<< p.getDescription() << endl;
+                cout << "Category: "<< p.getCategory() << endl;
+                cout << "Price: $"<< p.getPrice()<< endl;
 
             }
         }
